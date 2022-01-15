@@ -6,7 +6,7 @@
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "prod": "npm run production",
+        "prod": "mix --production && mix --production --mix-config=webpack.ssr.mix.js",
         "production": "mix --production"
     },
     "devDependencies": {
@@ -20,6 +20,10 @@
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
-        "vue": "^3.2.26"
+        "@inertiajs/server": "^0.1.0",
+        "@vue/server-renderer": "^3.2.26",
+        "stream-http": "^3.2.0",
+        "vue": "^3.2.26",
+        "webpack-node-externals": "^3.0.0"
     }
 }
