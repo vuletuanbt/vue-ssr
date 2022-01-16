@@ -8,11 +8,6 @@ mix
     .vue({version: 3, options: {optimizeSSR: true}})
     .alias({'@': path.resolve('resources/js')})
     .webpackConfig({
-        target: 'node', externals: [webpackNodeExternals()],
-        resolve: {
-            modules: ['node_modules'],
-            fallback: {
-                "http": false
-            }
-        }
+        target: 'node',
+        externals: [webpackNodeExternals()],
     })
