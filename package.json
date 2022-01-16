@@ -24,6 +24,7 @@
         "@vue/server-renderer": "^3.2.26",
         "stream-http": "^3.2.0",
         "vue": "^3.2.26",
+        "vuex": "^4.0.2",
         "webpack-node-externals": "^3.0.0"
     }
 }
