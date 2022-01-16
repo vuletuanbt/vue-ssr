@@ -20,4 +20,7 @@ mix.webpackConfig({
     output: {
         chunkFilename: "js/[name].js?id=[chunkhash]",
     },
+    resolve: {
+        fallback: { "http": require.resolve("stream-http") }
+    }
 });
