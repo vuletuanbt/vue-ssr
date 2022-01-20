@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,7 +16,8 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Home', ['test' => 'working']);
+    $users = User::query()->limit(3)->get();
+    return Inertia::render('Home', ['test' => 'working', 'users' => $users]);
 });
 
 Route::get('/about-us', function () {
