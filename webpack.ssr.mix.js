@@ -9,5 +9,12 @@ mix
     .alias({'@': path.resolve('resources/js')})
     .webpackConfig({
         target: 'node',
-        externals: [webpackNodeExternals()],
+        externalsPresets: { node: true }, // Needed for Webpack 5 https://www.npmjs.com/package/webpack-node-externals
+        externals: [webpackNodeExternals({
+            modulesFromFile: {
+                fileName: 'package.json',
+                includeInBundle: 'dependencies',
+                excludeFromBundle: 'devDependencies',
+            }
+        })]
     })

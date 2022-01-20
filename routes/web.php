@@ -16,10 +16,11 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    $users = User::query()->limit(3)->get();
+    $users = \App\Models\User::query()->limit(3)->get();
     return Inertia::render('Home', ['test' => 'working', 'users' => $users]);
 });
 
 Route::get('/about-us', function () {
-    return Inertia::render('About', ['about_us' => 'working']);
+    $users = \App\Models\User::query()->limit(3)->get();
+    return Inertia::render('About', ['about_us' => 'working', 'users' => $users]);
 });
