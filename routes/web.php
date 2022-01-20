@@ -15,9 +15,11 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Home', ['test' => 'working']);
+    $users = \App\Models\User::query()->limit(3)->get();
+    return Inertia::render('Home', ['test' => 'working', 'users' => $users]);
 });
 
 Route::get('/about-us', function () {
-    return Inertia::render('About', ['about_us' => 'working']);
+    $users = \App\Models\User::query()->limit(3)->get();
+    return Inertia::render('About', ['about_us' => 'working', 'users' => $users]);
 });
